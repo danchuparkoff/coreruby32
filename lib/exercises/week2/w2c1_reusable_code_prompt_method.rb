@@ -11,6 +11,7 @@
   http://rubylearning.com
 
   This program illustrates the require call to the reusable code in the prompt.rb file.
+  I've also added an until loop into this to replay the #Main section until user hits 0 to exit.
 =end
 
 # Main ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -18,23 +19,25 @@
 require 'prompt'
 
 # Constant Initialization
-  MINUTES_IN_HOUR = 60
-  HOURS_IN_DAY = 24
+MINUTES_IN_HOUR = 60
+HOURS_IN_DAY = 24
 
 # leap_year method: returns true for leap years returns false for non-leap years.
-  def leap_year? (year)
-    year % 4 == 0 && year % 100 != 0 || year % 400 == 0
-  end
+def leap_year? (year)
+  year % 4 == 0 && year % 100 != 0 || year % 400 == 0
+end
 
 # Minutes_in_a_year method repurposed from w1e4 retrofitted with leap_year? method conditional
-  def minutes_in_this_year(my_year)
-    days_in_year = leap_year?(my_year) ? 366 : 355
-    minutes_in_year = MINUTES_IN_HOUR * HOURS_IN_DAY * days_in_year
-  end
+def minutes_in_this_year(my_year)
+  days_in_year = leap_year?(my_year) ? 366 : 355
+  minutes_in_year = MINUTES_IN_HOUR * HOURS_IN_DAY * days_in_year
+end
 
 # Main ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  your_year = prompt("Enter any year and this method will convert it to a number of minutes", 'i')
 
+your_year = 1
+until your_year == 0
+  your_year = prompt("Enter any year or '0' to exit: ", 'i')
   #Output string
   puts "There are #{minutes_in_this_year(your_year)} minutes in the year #{your_year}"
-
+end

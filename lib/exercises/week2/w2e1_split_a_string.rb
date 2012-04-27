@@ -16,6 +16,9 @@
     Line 1: Welcome to the forum.
     Line 2: Here you can learn Ruby.
     Line 3: Along with other members.
+
+  This program illustrates the use of the .split method combined with the .each_index method.  Note that the process
+  exists twice with the only difference being the use of {} instead of do/end
 =end
 
 # A line splitting method, parsing a string on each newline using .split and putting the result back out with line numbers.
@@ -41,7 +44,6 @@ end
 initial_string = "Welcome to the forum.\nHere you can learn Ruby.\nAlong with other members.\n"
 line_split(initial_string)
 line_split2(initial_string)
-
 
 
 require 'benchmark'
