@@ -17,7 +17,7 @@
 # Main ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 def prompt(message, my_type = 'S')
-  print "#{message}: "
+  print "#{message} "
   STDOUT.flush
 
   case my_type.upcase!
