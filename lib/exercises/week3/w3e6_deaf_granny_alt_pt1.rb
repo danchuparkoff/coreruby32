@@ -31,26 +31,14 @@ require 'prompt'
 MIN_YEAR = 1930
 MAX_YEAR = 1950
 
-  until 'BYE' == you_speak = prompt('You enter:')
-    grams_response = case you_speak
-      when ''
-      when you_speak.upcase
-        "NO, NOT SINCE #{MIN_YEAR + rand(MAX_YEAR - MIN_YEAR + 1)}!"
-      else
-        'HUH?! SPEAK UP, SONNY!'
+  you_speak = ''
+  until you_speak == 'BYE'
+    case you_speak
+    when ''
+    when you_speak.upcase
+        puts "NO, NOT SINCE #{rand(MAX_YEAR - MIN_YEAR + 1) + MIN_YEAR}!"
+    else
+      puts 'HUH?! SPEAK UP, SONNY!'
     end
-    puts grams_response
+    you_speak = prompt('You enter: ')
   end
-
-
-
-
-
-
-
-
-
-
-
-
-
